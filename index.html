@@ -28,6 +28,9 @@
             p {
                 font-size: 2em;
             }
+	    li {
+                font-size: 2em;
+            }
             .container {
                 padding: 2em;
                 background-color: #FFF;
@@ -42,30 +45,28 @@
     <body>
 
         <div class="container">
-            <div class="span-19"><h1>Reading handwriting with an Applet and Deep Neural Networks</h1></div>
-            <div class="span-4 last"><img src="media/logo-udem.gif"></div>
+            <h1>Deep Self-Taught Learning for Handwritten Character Recognition</h1>
             <hr>
 
             <div class="span-24 last">
                 <center>
                     <applet code="ocr.AppletLauncher"
                             archive="dist/ocr.jar, dist/lib/appframework-1.0.3.jar, dist/lib/bzip2.jar, dist/lib/swing-worker-1.1.jar, dist/lib/swing-layout-1.0.3.jar"
-                            width="880" height="500">
+                            width="880" height="550">
                         Your browser is completely ignoring the &lt;applet&gt; tag!
                     </applet>
                 </center>
             </div>
             <div class="span-24 last">
                 <p></p>
-                <p style="margin: 1em;">Wait for the Applet to load and you will be able to draw a letter or digit using your mouse.
-                    This character will be recognized in real time by a Neural Network trained using Deep Learning. </p>
-                <p style="margin: 1em;">Deep Learning is a new area of Machine Learning research, which
-                    has been introduced with the objective of moving Machine Learning
-                    closer to one of its original goals: Artificial Intelligence.</p>
-                <center><p style="margin: 1em;"><a href="http://deeplearning.net/">Visit deeplearning.net for more information</a></p></center>
-            </div>
-            <div class="span-24 last alt"  style="margin: 2em;">
-                <center>This page was brought to you by UdeM's <a href="http://www.iro.umontreal.ca/rubrique.php3?id_rubrique=27&lang=en">LISA Lab</a> to demonstrate Deep Learning.</center>
+                <p style="margin: 1em;">This demo allows you to compare two neural network detectors of handwritten characters:</p>
+		<ul style="padding-left: 10em;">
+			<li>A shallow multi-layer perceptron (MLP) with one hidden layer of 1000 units</li>
+			<li>A deep network trained with 3 stacked denoising autoencoders (SDA) of 1000 hidden units each</li>
+		</ul>
+		<p></p>
+		<p style="margin: 1em;">Both classifiers are trained on P07, a distribution that combines multiple datasets and stochastic transformations.</p>
+		<p style="margin: 1em;">The demo provides real-time detection of characters as you draw (left panel) and apply transforms (middle panel) similar to the ones in P07. The three best results are shown (right panel) along with the confidence of the detector.</p>
             </div>
         </div>
 
